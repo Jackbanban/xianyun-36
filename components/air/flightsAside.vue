@@ -22,7 +22,6 @@
 
         <div class="history">
             <h5>历史查询</h5>
-<<<<<<< HEAD
             <nuxt-link 
             v-for="(item,index) in $store.state.air.history" 
             :key="index"
@@ -35,34 +34,18 @@
                 class="history-item"
                 >
                     <div class="air-info" >
-=======
-
-            <nuxt-link :to="`/air/flights?departCity=${item.departCity}&departCode=${item.departCode}&destCity=${item.destCity}&destCode=${item.destCode}&departDate=${item.departDate}`"
-            v-for="(item, index) in $store.state.air.history"
-            :key="index">
-                <el-row type="flex" 
-                justify="space-between" 
-                align="middle"
-                class="history-item">
-                    <div class="air-info">
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
                         <div class="to-from">{{item.departCity}} - {{item.destCity}}</div>
                         <p>{{item.departDate}}</p>
                     </div>
                     <span>选择</span>
                 </el-row>
             </nuxt-link>
-<<<<<<< HEAD
-=======
-
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
         </div>
     </div>
 </template>
 
 <script>
 export default {
-<<<<<<< HEAD
     // data(){
     //     return{
     //         data:[]
@@ -72,9 +55,6 @@ export default {
     //     this.data = JSON.parse(localStorage.getItem('airs') || `[]`)
     //     console.log()
     // }
-=======
-
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
 }
 </script>
 

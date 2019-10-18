@@ -7,27 +7,16 @@
 
         <el-form-item class="form-item" prop="username">
             <el-input 
-<<<<<<< HEAD
             placeholder="用户名/手机"
             v-model="form.username">
-=======
-            v-model="form.username"
-            placeholder="用户名/手机">
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
             </el-input>
         </el-form-item>
 
         <el-form-item class="form-item" prop="password">
             <el-input 
-<<<<<<< HEAD
             placeholder="密码" 
             type="password"
             v-model="form.password">
-=======
-            v-model="form.password"
-            placeholder="密码" 
-            type="password">
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
             </el-input>
         </el-form-item>
 
@@ -51,28 +40,16 @@ export default {
         return {
             // 表单数据
             form: {
-<<<<<<< HEAD
                 username:'',
                 password:''
-=======
-                username: "",
-                password: ""
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
             },
             // 表单规则
             rules: {
                 username: [
-<<<<<<< HEAD
                     { required: true, message: '请输入用户名', trigger: 'blur' }
                 ],
                 password: [
                     { required: true, message: '请输入密码', trigger: 'blur' }
-=======
-                    { required: true, message: '请输入用户名', trigger: 'blur' },
-                ],
-                password: [
-                    { required: true, message: '请输入密码', trigger: 'blur' },
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
                 ]
             },
         }
@@ -80,7 +57,6 @@ export default {
     methods: {
         // 提交登录
         handleLoginSubmit(){
-<<<<<<< HEAD
         //    console.log(this.form)
             this.$refs.form.validate(async valid => {
                 if(valid){
@@ -93,20 +69,6 @@ export default {
                     }
                 }
             })
-=======
-           this.$refs.form.validate(async valid => {
-               // valid是表单验证的结果
-               if(valid){
-                    // this.$store.dispath用于调运actions的方法
-                    const res = await this.$store.dispatch("user/login", this.form)
-
-                    if(res.status === 200){
-                        this.$message.success("登录成功");
-                        this.$router.back("/")
-                    }
-               }
-           })
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
         }
     }
 }
@@ -132,8 +94,4 @@ export default {
         width:100%;
         margin-top:10px;
     }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349

@@ -1,12 +1,7 @@
 <template>
     <header class="header">
-<<<<<<< HEAD
         <el-row type="flex" justify="space-between" class="main">
 
-=======
-        <!-- flex布局，带有降级方案 -->
-        <el-row type="flex" justify="space-between" class="main">
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
             <!-- logo -->
             <div class="logo">
                 <nuxt-link to="/">
@@ -16,13 +11,7 @@
 
             <!-- 菜单栏 -->
             <el-row type="flex" class="navs">
-<<<<<<< HEAD
                 <!--等同于vue的router-link-->
-=======
-
-                <!-- 奥利奥  粤利粤  雪碧 雷碧 -->
-                <!-- nuxt-link就是相当于router-link -->
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
                 <nuxt-link to="/">首页</nuxt-link>
                 <nuxt-link to="/post">旅游攻略</nuxt-link>
                 <nuxt-link to="/hotel">酒店</nuxt-link>
@@ -32,7 +21,6 @@
             <!-- 登录/用户信息 -->
             <el-row type="flex" align="middle">
 
-<<<<<<< HEAD
                 <!-- 如果用户存在则展示用户信息，用户数据来自store -->
                 <el-dropdown v-if="this.$store.state.user.userInfo.token">
                     <el-row type="flex" align="middle" class="el-dropdown-link">
@@ -48,38 +36,14 @@
                         </el-dropdown-item>
                         <el-dropdown-item>
                             <div @click="handleLogout">退出</div> 
-=======
-                <!-- 不存在用户信息展示登录注册链接 -->
-                <nuxt-link 
-                to="/user/login" 
-                class="account-link"
-                v-if="!$store.state.user.userInfo.token">
-                    登录 / 注册 
-                </nuxt-link>
-
-                <el-dropdown v-else>
-                    <span class="el-dropdown-link">
-                        <!-- 头像 -->
-                        <img :src="$axios.defaults.baseURL + $store.state.user.userInfo.user.defaultAvatar"/>
-                        {{ $store.state.user.userInfo.user.nickname}}
-                        <i class="el-icon-arrow-down el-icon--right"></i>
-                    </span>
-                    <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>个人中心</el-dropdown-item>
-                        <el-dropdown-item>
-                            <span @click="handleLogout">退出</span>
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
                         </el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
 
-<<<<<<< HEAD
                 <!-- 不存在用户信息展示登录注册链接 -->
                 <nuxt-link to="/user/login" class="account-link" v-else>
                     登录 / 注册 
                 </nuxt-link>
-=======
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
             </el-row>
         </el-row>
     </header>
@@ -89,16 +53,9 @@ export default {
     methods: {
         // 用户退出
         handleLogout(){
-<<<<<<< HEAD
             this.$store.commit('user/setUserInfo',{})
         },
     },
-=======
-            // 清空用户数据
-            this.$store.commit("user/setUserInfo", {})
-        },
-    }
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
 }
 </script>
 <style scoped lang="less">
@@ -141,11 +98,7 @@ export default {
                 }
             }
 
-<<<<<<< HEAD
             // nuxt里面对于tab样式切换的类名，文档可以查看            
-=======
-            // nuxt会自动匹配nuxt-link的to属性，如果to的值和url的相等的话就自动加上该样式
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
             /deep/ .nuxt-link-exact-active{
                 background:#409eff;
                 color:#fff!important;
@@ -176,10 +129,6 @@ export default {
            }
 
             img{
-<<<<<<< HEAD
-
-=======
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
                 width:32px;
                 height:32px;
                 vertical-align: middle;

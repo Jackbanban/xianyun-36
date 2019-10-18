@@ -58,7 +58,6 @@
 <script>
 export default {
     data(){
-<<<<<<< HEAD
         var validatePass = (rule, value, callback) => {
             if (value === '') {
             callback(new Error('请再次输入密码'));
@@ -76,49 +75,16 @@ export default {
                 captcha:'',
                 password:'',
                 checkPassword:''
-=======
-        // 确认密码的校验的方法
-        // rule: 当前的规则，一般是用不上这个参数
-        // value: 输入框的值
-        // callback: 回调函数。该函数必须要调用，调用时候可以传递错误的对象信息
-        var validatePass = (rule, value, callback) => {
-            if (value === '') {
-                // new Error js原生的错误对象
-                callback(new Error('请再次输入密码'));
-            } else if (value !== this.form.password) {
-                callback(new Error('两次输入密码不一致!'));
-            } else {
-                // 验证通过
-                callback();
-            }
-        };
-
-        return {
-            // 表单数据
-            form: {
-                username: "",
-                nickname: "",
-                captcha: "", //验证码
-                password: "",
-                checkPassword: ""// 确认密码
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
             },
             // 表单规则
             rules: {
                 username: [
                     { required: true, message: '请输入用户名', trigger: 'blur' }
                 ],
-<<<<<<< HEAD
                 nickname:[
                     { required: true, message: '请输入昵称', trigger: 'blur' }
                 ],
                 captcha:[
-=======
-                nickname: [
-                    { required: true, message: '请输入昵称', trigger: 'blur' }
-                ],
-                captcha: [
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
                     { required: true, message: '请输入验证码', trigger: 'blur' }
                 ],
                 password: [
@@ -126,11 +92,7 @@ export default {
                 ],
                 checkPassword: [
                     { validator: validatePass, trigger: 'blur' }
-<<<<<<< HEAD
                 ]
-=======
-                ],
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
             },
         }
     },
@@ -138,7 +100,6 @@ export default {
         // 发送验证码
         async handleSendCaptcha(){
 
-<<<<<<< HEAD
             if(this.form.username){
                 const res = await this.$store.dispatch('user/sendCaptcha',this.form.username)
                 const {code} = res.data
@@ -161,49 +122,6 @@ export default {
                this.$router.push('/')
            }
            
-=======
-            if(!this.form.username){
-                this.$message.error("手机号码不能为空");
-                return;
-            }
-
-            // 调用actions的方法
-            const res = await this.$store.dispatch("user/sendCaptcha", this.form.username);
-
-            const {code} = res.data;
-            // 打印出手机的验证码
-            this.$message.success(`当前的手机验证码是：${code}`);
-        },
-
-        // 注册
-        handleRegSubmit(){
-          this.$refs.form.validate(async valid => {
-              if(valid){
-                  
-                  // props是form里面除了checkPassword以外的属性
-                  const {checkPassword, ...props} = this.form
-
-                  // 请求注册的接口
-                  const res = await this.$axios({
-                      url: "/accounts/register",
-                      method: "POST",
-                      data: props
-                  })
-
-                  if(res.status === 200){
-					   this.$message.success("注册成功");
-
-					   // 跳转到首页
-                       this.$router.push("/")
-                    
-					   const data = res.data;
-					   
-                       // 把用户信息token保存到本地，在头部组件中显示用户数据
-                       this.$store.commit("user/setUserInfo", data);
-                   }
-              }
-          })
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
         }
     }
 }

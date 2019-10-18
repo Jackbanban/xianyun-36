@@ -1,31 +1,15 @@
 <template>
   <div>
-<<<<<<< HEAD
     <Header></Header>
     <!-- 内容占位组件 -->
     <nuxt />
     <Footer></Footer>
-=======
-    <!-- 头部组件 -->
-    <Header/>
-
-    <!-- 内容占位组件,类似于router-view -->
-    <nuxt />
-    
-    <!-- 页脚组件 -->
-    <Footer/>
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
   </div>
 </template>
 
 <script>
 import Header from "@/components/header"
-<<<<<<< HEAD
 import Footer from "@/components/footer";
-=======
-import Footer from "@/components/footer"
-
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
 export default {
   components: {
     Header,

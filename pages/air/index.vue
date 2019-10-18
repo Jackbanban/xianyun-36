@@ -7,12 +7,7 @@
     <!-- 搜索广告栏 -->
     <el-row type="flex" justify="space-between">
         <!-- 搜索表单 -->
-<<<<<<< HEAD
         <searchForm/>
-=======
-        <SearchForm/>
-
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
         <!-- banner广告 -->
         <div class="sale-banner">
             <img src="http://157.122.54.189:9093/images/pic_sale.jpeg">
@@ -42,7 +37,6 @@
 
     <!-- 特价机票 -->
     <div class="air-sale">
-<<<<<<< HEAD
          <el-row type="flex" class="air-sale-pic" justify="space-between">
             <el-col :span="6" v-for="(item, index) in sales" :key="index">
                 <nuxt-link :to="`/air/flights?departCity=${item.departCity}&departCode=${item.departCode}&destCity=${item.destCity}&destCode=${item.destCode}&departDate=${item.departDate}`">
@@ -54,27 +48,11 @@
                 </nuxt-link>
             </el-col>
         </el-row>
-=======
-      <el-row type="flex" class="air-sale-pic" justify="space-between">
-        <el-col :span="6" 
-        v-for="(item, index) in sales" 
-        :key="index">
-            <nuxt-link :to="`/air/flights?departCity=${item.departCity}&departCode=${item.departCode}&destCity=${item.destCity}&destCode=${item.destCode}&departDate=${item.departDate}`">
-                <img :src="item.cover"/>
-                <el-row class="layer-bar" type="flex" justify="space-between">
-                    <span>{{item.departCity}}-{{item.destCity}}</span>
-                    <span>￥{{item.price}}</span>
-                </el-row>
-            </nuxt-link>
-        </el-col>
-      </el-row>
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
     </div>
   </section>
 </template>
 
 <script>
-<<<<<<< HEAD
 import searchForm from '@/components/air/searchForm.vue'
 export default {
   data(){
@@ -92,30 +70,6 @@ export default {
         const {data} = res.data
         this.sales = data
     })
-=======
-import SearchForm from "@/components/air/searchForm"
-export default {
-  data(){
-    return {
-      sales: []
-    }
-  },
-  components: {
-    SearchForm
-  },
-
-  mounted(){
-    
-    // 请求特价机票列表
-    this.$axios({
-      url: "/airs/sale",
-    }).then(res => {
-      const {data} = res.data;
-
-      this.sales = data;
-    })
-
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
   }
 }
 </script>
