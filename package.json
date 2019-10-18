@@ -17,10 +17,7 @@
     "less-loader": "^5.0.0",
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
-<<<<<<< HEAD
     "qrcode": "^1.4.2",
-=======
->>>>>>> 2554d57f36409b59830665ba68660ab3f0572349
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {}
